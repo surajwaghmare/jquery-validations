@@ -1,0 +1,29 @@
+window.open("print_invoice?invoice="+sooraj,"_blank","toolbar=yes, scrollbars=yes, resizable=yes, top=20, left=150, width=1000, height=700");
+
+
+
+
+
+
+	<script>
+$(function(){
+	$("#dialog").dialog({
+	    autoOpen: false,
+	    position: 'center' ,
+	    title: 'Print Invoice',
+	    draggable: false,
+	    width : 1200,
+	    height : 700, 
+	    resizable : false,
+	    modal : true,
+	});
+
+	$("#sssss").click( function() {
+		var ssw_invoice = $(".uid-here").val();
+	    $("#dialog").load('http://192.168.0.107/astrolee.com/index.php/test_controller/print_invoice?invoice='+ssw_invoice, function() {
+	        $("#dialog").dialog("open");
+	    });
+	});
+});
+</script>
+<div id="dialog"></div>
